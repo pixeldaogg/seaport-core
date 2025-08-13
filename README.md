@@ -1,16 +1,14 @@
-# seaport-core
+# GONDI
 
 [![Version][version-badge]][version-link]
 [![npm][npm-badge]][npm-link]
 
-This repo contains the core Seaport smart contracts (with no reference contracts, helpers, or tests) and is meant to facilitate building on Seaport without needing to grapple with long compile times or other complications.
-
-For more information on Seaport, see the [main Seaport repo][seaport].
+This repo contains the GONDI trade smart contracts.
 
 Related repositories:
 
-- [seaport-types][seaport-types]
-- [seaport-sol][seaport-sol]
+-   [seaport-types][seaport-types]
+-   [seaport-sol][seaport-sol]
 
 [seaport]: https://github.com/ProjectOpenSea/seaport
 [seaport-core]: https://github.com/ProjectOpenSea/seaport-core
