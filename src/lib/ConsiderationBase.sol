@@ -1,56 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import {
-    ConduitControllerInterface
-} from "seaport-types/src/interfaces/ConduitControllerInterface.sol";
+import {ConduitControllerInterface} from "seaport-types/src/interfaces/ConduitControllerInterface.sol";
 
-import {
-    ConsiderationEventsAndErrors
-} from "seaport-types/src/interfaces/ConsiderationEventsAndErrors.sol";
+import {ConsiderationEventsAndErrors} from "seaport-types/src/interfaces/ConsiderationEventsAndErrors.sol";
 
-import {
-    BulkOrder_Typehash_Height_One,
-    BulkOrder_Typehash_Height_Two,
-    BulkOrder_Typehash_Height_Three,
-    BulkOrder_Typehash_Height_Four,
-    BulkOrder_Typehash_Height_Five,
-    BulkOrder_Typehash_Height_Six,
-    BulkOrder_Typehash_Height_Seven,
-    BulkOrder_Typehash_Height_Eight,
-    BulkOrder_Typehash_Height_Nine,
-    BulkOrder_Typehash_Height_Ten,
-    BulkOrder_Typehash_Height_Eleven,
-    BulkOrder_Typehash_Height_Twelve,
-    BulkOrder_Typehash_Height_Thirteen,
-    BulkOrder_Typehash_Height_Fourteen,
-    BulkOrder_Typehash_Height_Fifteen,
-    BulkOrder_Typehash_Height_Sixteen,
-    BulkOrder_Typehash_Height_Seventeen,
-    BulkOrder_Typehash_Height_Eighteen,
-    BulkOrder_Typehash_Height_Nineteen,
-    BulkOrder_Typehash_Height_Twenty,
-    BulkOrder_Typehash_Height_TwentyOne,
-    BulkOrder_Typehash_Height_TwentyTwo,
-    BulkOrder_Typehash_Height_TwentyThree,
-    BulkOrder_Typehash_Height_TwentyFour,
-    EIP712_domainData_chainId_offset,
-    EIP712_domainData_nameHash_offset,
-    EIP712_domainData_size,
-    EIP712_domainData_verifyingContract_offset,
-    EIP712_domainData_versionHash_offset,
-    FreeMemoryPointerSlot,
-    NameLengthPtr,
-    NameWithLength,
-    OneWord,
-    Slot0x80,
-    ThreeWords,
-    ZeroSlot
-} from "seaport-types/src/lib/ConsiderationConstants.sol";
+import {BulkOrder_Typehash_Height_One, BulkOrder_Typehash_Height_Two, BulkOrder_Typehash_Height_Three, BulkOrder_Typehash_Height_Four, BulkOrder_Typehash_Height_Five, BulkOrder_Typehash_Height_Six, BulkOrder_Typehash_Height_Seven, BulkOrder_Typehash_Height_Eight, BulkOrder_Typehash_Height_Nine, BulkOrder_Typehash_Height_Ten, BulkOrder_Typehash_Height_Eleven, BulkOrder_Typehash_Height_Twelve, BulkOrder_Typehash_Height_Thirteen, BulkOrder_Typehash_Height_Fourteen, BulkOrder_Typehash_Height_Fifteen, BulkOrder_Typehash_Height_Sixteen, BulkOrder_Typehash_Height_Seventeen, BulkOrder_Typehash_Height_Eighteen, BulkOrder_Typehash_Height_Nineteen, BulkOrder_Typehash_Height_Twenty, BulkOrder_Typehash_Height_TwentyOne, BulkOrder_Typehash_Height_TwentyTwo, BulkOrder_Typehash_Height_TwentyThree, BulkOrder_Typehash_Height_TwentyFour, EIP712_domainData_chainId_offset, EIP712_domainData_nameHash_offset, EIP712_domainData_size, EIP712_domainData_verifyingContract_offset, EIP712_domainData_versionHash_offset, FreeMemoryPointerSlot, NameLengthPtr, NameWithLength, OneWord, Slot0x80, ThreeWords, ZeroSlot} from "seaport-types/src/lib/ConsiderationConstants.sol";
 
-import { ConsiderationDecoder } from "./ConsiderationDecoder.sol";
+import {ConsiderationDecoder} from "./ConsiderationDecoder.sol";
 
-import { ConsiderationEncoder } from "./ConsiderationEncoder.sol";
+import {ConsiderationEncoder} from "./ConsiderationEncoder.sol";
 
 /**
  * @title ConsiderationBase
@@ -195,6 +154,17 @@ contract ConsiderationBase is
     }
 
     /**
+     * @dev Internal pure function to retrieve the version of this contract
+     *      as a string that can be used internally.
+     *
+     * @return The version of this contract.
+     */
+    function _version() internal pure virtual returns (string memory) {
+        // Return the name of the contract.
+        return "1.6";
+    }
+
+    /**
      * @dev Internal pure function to derive required EIP-712 typehashes and
      *      other hashes during contract creation.
      *
@@ -224,7 +194,7 @@ contract ConsiderationBase is
         nameHash = keccak256(bytes(_nameString()));
 
         // Derive hash of the version string of the contract.
-        versionHash = keccak256(bytes("1.6"));
+        versionHash = keccak256(bytes(_version()));
 
         // Construct the OfferItem type string.
         bytes memory offerItemTypeString = bytes(
