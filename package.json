@@ -1,10 +1,10 @@
 {
-  "name": "seaport-core",
-  "version": "1.6.6",
-  "description": "Core smart contracts for the Seaport protocol",
+  "name": "Gondi",
+  "version": "1.0.0",
+  "description": "Gondi trade contract",
   "main": "src/",
-  "repository": "https://github.com/ProjectOpenSea/seaport-core.git",
-  "author": "OpenSea",
+  "repository": "https://github.com/pixeldaogg/seaport-core.git",
+  "author": "Gondi",
   "license": "MIT",
   "files": [
     "node_modules",
