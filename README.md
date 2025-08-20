@@ -18,3 +18,8 @@ Related repositories:
 [version-link]: https://github.com/ProjectOpenSea/seaport-core/releases
 [npm-badge]: https://img.shields.io/npm/v/seaport-core?color=red
 [npm-link]: https://www.npmjs.com/package/seaport-core
+
+# Setup
+
+To deploy GONDI contract, run `bash deploy.sh`. `ETH_RPC_URL`, `PRIVATE_KEY` and `ETHERSCAN_API_KEY` needs to be set.
+If verification fails, please run `bash verify.sh`.
