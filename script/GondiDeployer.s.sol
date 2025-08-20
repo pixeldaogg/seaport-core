@@ -19,7 +19,7 @@ contract GondiDeployer is Script {
     address private constant CONDUIT_CONTROLLER =
         0x00000000F9490004C11Cef243f5400493c00Ad63;
     address private constant GONDI_ADDRESS =
-        0x6Db9dAaf80c67cf4343d86cE490de6A1B0000000;
+        0x4c5DFD2260d1b033494b70b92be417eA60000000;
 
     function run()
         public
@@ -29,7 +29,7 @@ contract GondiDeployer is Script {
         vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
 
         // CREATE2 salt (20-byte caller or zero address + 12-byte salt).
-        bytes32 salt = 0x0000000000000000000000000000000000000000000000008e50a61c00000000;
+        bytes32 salt = 0x000000000000000000000000000000000000000000000000f155ab0900000000;
 
         // Packed and ABI-encoded contract bytecode and constructor arguments.
         // NOTE: The Seaport contract *must* be compiled using the optimized profile config.

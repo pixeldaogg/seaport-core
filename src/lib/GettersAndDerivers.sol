@@ -1,39 +1,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import {
-    OrderParameters
-} from "seaport-types/src/lib/ConsiderationStructs.sol";
+import {OrderParameters} from "seaport-types/src/lib/ConsiderationStructs.sol";
 
-import { ConsiderationBase } from "./ConsiderationBase.sol";
+import {ConsiderationBase} from "./ConsiderationBase.sol";
 
-import {
-    Create2AddressDerivation_length,
-    Create2AddressDerivation_ptr,
-    EIP_712_PREFIX,
-    EIP712_ConsiderationItem_size,
-    EIP712_DigestPayload_size,
-    EIP712_DomainSeparator_offset,
-    EIP712_OfferItem_size,
-    EIP712_Order_size,
-    EIP712_OrderHash_offset,
-    FreeMemoryPointerSlot,
-    information_conduitController_offset,
-    information_domainSeparator_offset,
-    information_length,
-    information_version_cd_offset,
-    information_version_offset,
-    information_versionLengthPtr,
-    information_versionWithLength,
-    MaskOverByteTwelve,
-    MaskOverLastTwentyBytes,
-    OneWord,
-    OneWordShift,
-    OrderParameters_consideration_head_offset,
-    OrderParameters_counter_offset,
-    OrderParameters_offer_head_offset,
-    TwoWords
-} from "seaport-types/src/lib/ConsiderationConstants.sol";
+import {Create2AddressDerivation_length, Create2AddressDerivation_ptr, EIP_712_PREFIX, EIP712_ConsiderationItem_size, EIP712_DigestPayload_size, EIP712_DomainSeparator_offset, EIP712_OfferItem_size, EIP712_Order_size, EIP712_OrderHash_offset, FreeMemoryPointerSlot, information_conduitController_offset, information_domainSeparator_offset, information_length, information_version_cd_offset, information_version_offset, information_versionLengthPtr, MaskOverByteTwelve, MaskOverLastTwentyBytes, OneWord, OneWordShift, OrderParameters_consideration_head_offset, OrderParameters_counter_offset, OrderParameters_offer_head_offset, TwoWords} from "seaport-types/src/lib/ConsiderationConstants.sol";
+
+uint256 constant information_versionWithLength = 0x03312e30; // 1.0
 
 /**
  * @title GettersAndDerivers
