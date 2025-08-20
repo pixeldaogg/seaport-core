@@ -27,11 +27,7 @@ contract Gondi is Consideration {
      */
     function _name() internal pure override returns (string memory) {
         // Return the name of the contract.
-        assembly {
-            mstore(0x20, 0x20)
-            mstore(0x47, 0x474f4e4449)
-            return(0x20, 0x60)
-        }
+        return _nameString();
     }
 
     /**
