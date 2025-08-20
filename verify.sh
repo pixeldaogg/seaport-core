@@ -1,0 +1,1 @@
+forge verify-contract --watch 0x4c5dfd2260d1b033494b70b92be417ea60000000 src/Gondi.sol:Gondi
